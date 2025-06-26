@@ -1,0 +1,8 @@
+# Global code owner for the entire repository
+* @lazaroagomez
+
+# Specific patterns for dependency files
+package*.json @lazaroagomez
+Dockerfile @lazaroagomez
+docker-compose.yml @lazaroagomez
+.github/ @lazaroagomez 
