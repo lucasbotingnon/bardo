@@ -1,8 +1,5 @@
 # BeatDock
 
-<div align="center">
-  <img src="docs/logo.avif" alt="BeatDock Logo" width="200">
-</div>
 
 ![license](https://img.shields.io/github/license/lazaroagomez/BeatDock?style=flat-square)
 ![Discord.js](https://img.shields.io/badge/discord.js-v14.21.0-blue?style=flat-square)
