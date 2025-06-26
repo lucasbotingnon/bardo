@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeatDock - Your Ultimate Discord Music Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">🎵 BeatDock</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#commands">Commands</a></li>
+                <li><a href="#setup">Setup</a></li>
+                <li><a href="https://github.com/lazaroagomez/BeatDock" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>The only Discord music bot you'll ever need.</h1>
+            <p class="subtitle">High-quality music, slash commands, multilingual support, and easy Docker deployment.</p>
+            <a href="#setup" class="btn btn-primary">Get Started</a>
+            <a href="https://github.com/lazaroagomez/BeatDock" class="btn btn-secondary" target="_blank">View on GitHub</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="features">
+            <h2>Why Choose BeatDock?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Rich Music Playback</h3>
+                    <p>Play songs and playlists from YouTube with queue management, shuffle, volume control, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Modern Slash Commands</h3>
+                    <p>Utilizes Discord's fast and intuitive slash commands for a seamless user experience.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Multi-Language Support</h3>
+                    <p>Comes with English and Spanish translations out of the box, and can be easily extended.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fab fa-docker"></i>
+                    <h3>One-Command Deployment</h3>
+                    <p>Get up and running in seconds with the power of Docker and docker compose.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Role-Based Permissions</h3>
+                    <p>Control who can use the bot with a simple, role-based permission system.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Stateless by Design</h3>
+                    <p>No database required. All state is kept in memory, perfect for containerized setups.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="commands">
+            <h2>Command Reference</h2>
+            <p>A complete list of all available slash commands.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>/play &lt;query&gt;</code></td><td>Play a song or playlist (searches YouTube if not a URL)</td></tr>
+                    <tr><td><code>/skip</code></td><td>Skip the current song</td></tr>
+                    <tr><td><code>/stop</code></td><td>Stop playback and clear the queue</td></tr>
+                    <tr><td><code>/pause</code></td><td>Toggle pause/resume</td></tr>
+                    <tr><td><code>/queue</code></td><td>Show the current queue</td></tr>
+                    <tr><td><code>/nowplaying</code></td><td>Show info about the current song</td></tr>
+                    <tr><td><code>/shuffle</code></td><td>Shuffle the queue</td></tr>
+                    <tr><td><code>/volume &lt;0-100&gt;</code></td><td>Set playback volume</td></tr>
+                    <tr><td><code>/clear</code></td><td>Clear the entire queue</td></tr>
+                    <tr><td><code>/back</code></td><td>Play the previous track</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="setup">
+            <h2>Quick Start Guide</h2>
+            <p>Deploying BeatDock is incredibly simple with Docker.</p>
+            <div class="setup-steps">
+                <div class="step">
+                    <h3>1. Clone the Repository</h3>
+                    <p>Get the source code on your machine.</p>
+                    <div class="code-block">
+                        <pre><code>git clone https://github.com/lazaroagomez/BeatDock.git
+cd BeatDock</code></pre>
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+                <div class="step">
+                    <h3>2. Configure your Bot</h3>
+                    <p>Create a <code>.env</code> file with your bot token and client ID.</p>
+                    <div class="code-block">
+                        <pre><code> # Required
+   TOKEN=your_discord_bot_token
+   CLIENT_ID=your_discord_client_id
+
+   # Lavalink connection
+   LAVALINK_HOST=lavalink
+   LAVALINK_PORT=2333
+   LAVALINK_PASSWORD=youshallnotpass
+
+   # Optional: Language (default is "en")
+   DEFAULT_LANGUAGE=en
+
+   # Optional: Timeout settings (milliseconds)
+   QUEUE_EMPTY_DESTROY_MS=30000  
+   EMPTY_CHANNEL_DESTROY_MS=60000 
+
+   # Optional: Permission Settings (comma-separated role IDs)
+   ALLOWED_ROLES=</code></pre>
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+                <div class="step">
+                    <h3>3. Deploy Commands</h3>
+                    <p>Run this one-time command to register the slash commands with Discord.</p>
+                    <div class="code-block">
+                        <pre><code>docker compose run --rm bot npm run deploy</code></pre>
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+                <div class="step">
+                    <h3>4. Start the Bot</h3>
+                    <p>That's it! Your bot is now online.</p>
+                    <div class="code-block">
+                        <pre><code>docker compose up -d</code></pre>
+                        <button class="copy-btn"><i class="far fa-copy"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lázaro Gómez. All Rights Reserved.</p>
+            <p>BeatDock is licensed under the Apache-2.0 License.</p>
+            <div class="footer-links">
+                <a href="https://github.com/lazaroagomez/BeatDock" target="_blank">GitHub</a>
+                <a href="https://github.com/lazaroagomez/BeatDock/issues" target="_blank">Report an Issue</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

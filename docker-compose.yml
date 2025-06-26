@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  bot:
+    container_name: beatdock
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - lavalink
+    networks:
+      - beatdock-network
+    env_file: .env
+
+  lavalink:
+    container_name: beatdock-lavalink
+    image: fredboat/lavalink:4-alpine
+    ports:
+      - "2333:2333"
+    networks:
+      - beatdock-network
+    volumes:
+      - ./application.yml:/opt/Lavalink/application.yml
+
+networks:
+  beatdock-network:
+    name: beatdock_network
