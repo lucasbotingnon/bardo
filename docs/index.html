@@ -93,7 +93,7 @@
                         <div class="hero-stats mt-5">
                             <div class="stat-item">
                                 <i class="fas fa-music"></i>
-                                <span>YouTube Support</span>
+                                <span>YouTube & Spotify</span>
                             </div>
                             <div class="stat-item">
                                 <i class="fas fa-language"></i>
@@ -168,6 +168,16 @@
                         </div>
                         <h4>Role Permissions</h4>
                         <p>Control access with role-based permissions and admin overrides</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon">
+                            <i class="fab fa-spotify"></i>
+                        </div>
+                        <h4>Spotify Integration</h4>
+                        <p>Optional Spotify support with smart track resolution and ISRC matching</p>
                     </div>
                 </div>
                 
@@ -362,6 +372,12 @@ cd BeatDock</code></pre>
                                     <pre><code># Discord Bot Configuration
 TOKEN=your_discord_bot_token_here
 CLIENT_ID=your_discord_client_id_here
+
+# Optional: Spotify Configuration
+# Get your credentials from: https://developer.spotify.com/dashboard/applications
+SPOTIFY_ENABLED=false
+SPOTIFY_CLIENT_ID=your_spotify_client_id_here
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
 
 # Lavalink Configuration
 LAVALINK_HOST=lavalink
