@@ -21,6 +21,9 @@ services:
       - ./application.yml:/opt/Lavalink/application.yml
     environment:
       - LAVALINK_PASSWORD=${LAVALINK_PASSWORD:-youshallnotpass}
+      - SPOTIFY_ENABLED=${SPOTIFY_ENABLED:-false}
+      - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID:-}
+      - SPOTIFY_CLIENT_SECRET=${SPOTIFY_CLIENT_SECRET:-}
 
 networks:
   beatdock-network:
