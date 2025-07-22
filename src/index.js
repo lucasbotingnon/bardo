@@ -3,6 +3,7 @@ const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 const { LavalinkManager } = require('lavalink-client');
 const LanguageManager = require('./LanguageManager');
 const PlayerController = require('./utils/PlayerController');
+const searchSessions = require('./utils/searchSessions');
 const loadCommands = require('./handlers/commandHandler');
 const registerEvents = require('./handlers/eventHandler');
 
@@ -132,4 +133,25 @@ client.lavalink.on("queueEnd", (player) => {
 loadCommands(client);
 registerEvents(client);
 
-client.login(process.env.TOKEN); 
+// Graceful shutdown handling
+const shutdown = async (signal) => {
+    console.log(`Received ${signal}, shutting down gracefully...`);
+    
+    // Clear cleanup interval
+    searchSessions.destroy();
+    
+    // Destroy Lavalink nodes
+    for (const node of client.lavalink.nodeManager.nodes.values()) {
+        await node.destroy();
+    }
+    
+    // Destroy Discord client
+    await client.destroy();
+    
+    process.exit(0);
+};
+
+process.on('SIGINT', () => shutdown('SIGINT'));
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+
+client.login(process.env.TOKEN);
